@@ -4,7 +4,7 @@
     "require": {
         "php": "^7.3",
         "dbp/api-core-bundle": "@dev",
-        "vc4sm-bundle": "@dev",
+        "pg/vc4sm-bundle": "@dev",
         "symfony/apache-pack": "^1.0",
         "symfony/console": "^4.4",
         "symfony/dotenv": "^4.4",

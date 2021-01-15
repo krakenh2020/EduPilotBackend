@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1877401e1b3e605769aebc54913435aa",
+    "content-hash": "8f1287f9a8b01ea304fda458e2a5caba",
     "packages": [
         {
             "name": "adldap2/adldap2",
@@ -1284,6 +1284,80 @@
                 "crossdomain"
             ],
             "time": "2020-07-22T11:44:28+00:00"
+        },
+        {
+            "name": "pg/vc4sm-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PeterTheOne/vc4sm-bundle.git",
+                "reference": "cfe3710c16929dc24d51eff66068ab68f2a4e345"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PeterTheOne/vc4sm-bundle/zipball/cfe3710c16929dc24d51eff66068ab68f2a4e345",
+                "reference": "cfe3710c16929dc24d51eff66068ab68f2a4e345",
+                "shasum": ""
+            },
+            "require": {
+                "api-platform/core": "^2.5",
+                "dbp/api-core-bundle": "@dev",
+                "php": "^7.3",
+                "symfony/framework-bundle": "^4.1.12"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "phpstan/phpstan": "^0.12.33",
+                "phpstan/phpstan-phpunit": "^0.12.13",
+                "symfony/phpunit-bridge": "^4.4",
+                "vimeo/psalm": "^4.2.1"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "VC4SM\\Bundle\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "VC4SM\\Bundle\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "@php vendor/bin/simple-phpunit"
+                ],
+                "phpstan": [
+                    "@php vendor/bin/simple-phpunit --atleast-version 0",
+                    "@php vendor/bin/phpstan analyze --ansi"
+                ],
+                "psalm": [
+                    "@php vendor/bin/simple-phpunit --atleast-version 0",
+                    "@php vendor/bin/psalm"
+                ],
+                "lint": [
+                    "@composer run cs",
+                    "@composer run phpstan",
+                    "@composer run psalm"
+                ],
+                "cs-fix": [
+                    "@php vendor/bin/php-cs-fixer --ansi fix"
+                ],
+                "cs": [
+                    "@php vendor/bin/php-cs-fixer --ansi fix --dry-run --diff --diff-format=udiff"
+                ],
+                "coverage": [
+                    "@php vendor/bin/simple-phpunit --coverage-html _coverage"
+                ]
+            },
+            "license": [
+                "AGPL-3.0-or-later"
+            ],
+            "support": {
+                "source": "https://github.com/PeterTheOne/vc4sm-bundle/tree/master",
+                "issues": "https://github.com/PeterTheOne/vc4sm-bundle/issues"
+            },
+            "time": "2021-01-15T15:29:29+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -5146,80 +5220,6 @@
             "time": "2021-01-05T15:40:36+00:00"
         },
         {
-            "name": "vc4sm-bundle",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PeterTheOne/vc4sm-bundle.git",
-                "reference": "2c27bab745da5c4e84fb0505c3926e758b2a9428"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PeterTheOne/vc4sm-bundle/zipball/2c27bab745da5c4e84fb0505c3926e758b2a9428",
-                "reference": "2c27bab745da5c4e84fb0505c3926e758b2a9428",
-                "shasum": ""
-            },
-            "require": {
-                "api-platform/core": "^2.5",
-                "dbp/api-core-bundle": "@dev",
-                "php": "^7.3",
-                "symfony/framework-bundle": "^4.1.12"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.16",
-                "phpstan/phpstan": "^0.12.33",
-                "phpstan/phpstan-phpunit": "^0.12.13",
-                "symfony/phpunit-bridge": "^4.4",
-                "vimeo/psalm": "^4.2.1"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "VC4SM\\Bundle\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "VC4SM\\Bundle\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "@php vendor/bin/simple-phpunit"
-                ],
-                "phpstan": [
-                    "@php vendor/bin/simple-phpunit --atleast-version 0",
-                    "@php vendor/bin/phpstan analyze --ansi"
-                ],
-                "psalm": [
-                    "@php vendor/bin/simple-phpunit --atleast-version 0",
-                    "@php vendor/bin/psalm"
-                ],
-                "lint": [
-                    "@composer run cs",
-                    "@composer run phpstan",
-                    "@composer run psalm"
-                ],
-                "cs-fix": [
-                    "@php vendor/bin/php-cs-fixer --ansi fix"
-                ],
-                "cs": [
-                    "@php vendor/bin/php-cs-fixer --ansi fix --dry-run --diff --diff-format=udiff"
-                ],
-                "coverage": [
-                    "@php vendor/bin/simple-phpunit --coverage-html _coverage"
-                ]
-            },
-            "license": [
-                "AGPL-3.0-or-later"
-            ],
-            "support": {
-                "source": "https://github.com/PeterTheOne/vc4sm-bundle/tree/master",
-                "issues": "https://github.com/PeterTheOne/vc4sm-bundle/issues"
-            },
-            "time": "2021-01-15T14:50:16+00:00"
-        },
-        {
             "name": "web-token/jwt-checker",
             "version": "v2.2.7",
             "source": {
@@ -7250,7 +7250,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "dbp/api-core-bundle": 20,
-        "vc4sm-bundle": 20
+        "pg/vc4sm-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

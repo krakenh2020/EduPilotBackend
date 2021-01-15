@@ -142,6 +142,9 @@
     "openlss/lib-array2xml": {
         "version": "1.0.0"
     },
+    "pg/vc4sm-bundle": {
+        "version": "dev-master"
+    },
     "php": {
         "version": "7.3"
     },
