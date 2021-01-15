@@ -41,7 +41,7 @@ local development
 license
 -------
 
-LGPL-2.1-or-later License, Copyright (c) 2020 Peter Grassberger
+AGPL-3.0-or-later License, Copyright (c) 2021 Peter Grassberger
 
 Peter Grassberger <p.grassberger@student.tugraz.at> is the Author.
 
