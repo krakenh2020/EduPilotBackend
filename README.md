@@ -37,7 +37,9 @@ Creating your own API instance and creating your own Bundle
 local development
 -----------------
 
-*todo*
+- `cd docker-dev`
+- (see README there)
+- `docker-compose up`
 
 license
 -------
