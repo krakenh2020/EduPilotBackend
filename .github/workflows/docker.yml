@@ -33,13 +33,16 @@ jobs:
           echo "      at commit: ${{ github.sha }}"
           echo "   triggered by: ${{ github.event_name}}"
           echo "Pushing to:      $DOCKER_TAG"
-          docker buildx build . -t $DOCKER_TAG 
+          docker buildx build . -t $DOCKER_TAG -f Dockerfile.nginx
           docker push $DOCKER_TAG
       -
-        name: Build and push PHP image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          file: Dockerfile.php
-          push: true
-          tags: docker.pkg.github.com/krakenh2020/edupilotbackend/kraken-edu_php:latest
+        name: Docker Build & Push PHP image
+        run: |
+          export DOCKER_TAG=docker.pkg.github.com/krakenh2020/edupilotbackend/kraken-edu_php:latest
+          echo "Building branch: $GITHUB_REF"
+          echo "      at commit: ${{ github.sha }}"
+          echo "   triggered by: ${{ github.event_name}}"
+          echo "Pushing to:      $DOCKER_TAG"
+          docker buildx build . -t $DOCKER_TAG -f Dockerfile.php
+          docker push $DOCKER_TAG
+          
