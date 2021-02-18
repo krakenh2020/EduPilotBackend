@@ -32,7 +32,7 @@ jobs:
           context: .
           file: Dockerfile.nginx
           push: false
-          tags: docker.pkg.github.com/krakenh2020/EduPilotBackend/kraken-edu_frontend:latest
+          tags: docker.pkg.github.com/krakenh2020/edupilotbackend/kraken-edu_frontend:latest
       -
         name: Build and push PHP image
         uses: docker/build-push-action@v2
@@ -40,4 +40,4 @@ jobs:
           context: .
           file: Dockerfile.php
           push: false
-          tags: docker.pkg.github.com/krakenh2020/EduPilotBackend/kraken-edu_php:latest
+          tags: docker.pkg.github.com/krakenh2020/edupilotbackend/kraken-edu_php:latest
