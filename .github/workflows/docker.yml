@@ -23,7 +23,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: docker.pkg.github.com
-          username: $GITHUB_ACTOR
+          username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       -
         name: Build and push nginx image
@@ -32,7 +32,7 @@ jobs:
           context: .
           file: Dockerfile.nginx
           push: false
-          tags: "ghcr.io/${GITHUB_REPOSITORY}/kraken-edu_frontend:latest"
+          tags: docker.pkg.github.com/krakenh2020/EduPilotBackend/kraken-edu_frontend:latest
       -
         name: Build and push PHP image
         uses: docker/build-push-action@v2
@@ -40,4 +40,4 @@ jobs:
           context: .
           file: Dockerfile.php
           push: false
-          tags: "ghcr.io/${GITHUB_REPOSITORY}/kraken-edu_php:latest"
+          tags: docker.pkg.github.com/krakenh2020/EduPilotBackend/kraken-edu_php:latest
