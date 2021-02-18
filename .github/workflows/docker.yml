@@ -18,6 +18,13 @@ jobs:
       -
         name: Install PHP Dependencies
         run: cd docker-dev && bash build.sh
+      - 
+        name: Docker Login
+        uses: docker/login-action@v1
+        with:
+          registry: docker.pkg.github.com
+          username: $GITHUB_ACTOR
+          password: ${{ secrets.GITHUB_TOKEN }}
       -
         name: Build and push nginx image
         uses: docker/build-push-action@v2
