@@ -32,9 +32,8 @@ jobs:
           echo "Building branch: $GITHUB_REF"
           echo "      at commit: ${{ github.sha }}"
           echo "   triggered by: ${{ github.event_name}}"
-          echo "Pushing to:      $DOCKER_TAG"
-          docker buildx build . -t $DOCKER_TAG -f Dockerfile.nginx
-          docker push $DOCKER_TAG
+          echo "     Pushing to: $DOCKER_TAG"
+          docker buildx build . -t $DOCKER_TAG -f Dockerfile.nginx --push
       -
         name: Docker Build & Push PHP image
         run: |
@@ -42,7 +41,6 @@ jobs:
           echo "Building branch: $GITHUB_REF"
           echo "      at commit: ${{ github.sha }}"
           echo "   triggered by: ${{ github.event_name}}"
-          echo "Pushing to:      $DOCKER_TAG"
-          docker buildx build . -t $DOCKER_TAG -f Dockerfile.php
-          docker push $DOCKER_TAG
+          echo "     Pushing to: $DOCKER_TAG"
+          docker buildx build . -t $DOCKER_TAG -f Dockerfile.php --push
           
