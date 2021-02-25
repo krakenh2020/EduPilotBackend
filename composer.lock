@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1ffc12e34bb6e4891fbfa03ca6fedbba",
+    "content-hash": "11865a09de0649ceee0d1eed4c36d5a8",
     "packages": [
         {
             "name": "adldap2/adldap2",
@@ -1297,12 +1297,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PeterTheOne/vc4sm-bundle.git",
-                "reference": "65f60637a486e9a446bdc989d6e359af2a8afd5c"
+                "reference": "e2d62eeb04d82e92bb900c33aa0b99b8824e2c49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PeterTheOne/vc4sm-bundle/zipball/65f60637a486e9a446bdc989d6e359af2a8afd5c",
-                "reference": "65f60637a486e9a446bdc989d6e359af2a8afd5c",
+                "url": "https://api.github.com/repos/PeterTheOne/vc4sm-bundle/zipball/e2d62eeb04d82e92bb900c33aa0b99b8824e2c49",
+                "reference": "e2d62eeb04d82e92bb900c33aa0b99b8824e2c49",
                 "shasum": ""
             },
             "require": {
@@ -1318,6 +1318,7 @@
                 "symfony/phpunit-bridge": "^4.4",
                 "vimeo/psalm": "^4.2.1"
             },
+            "default-branch": true,
             "type": "symfony-bundle",
             "autoload": {
                 "psr-4": {
@@ -1363,7 +1364,7 @@
                 "source": "https://github.com/PeterTheOne/vc4sm-bundle/tree/master",
                 "issues": "https://github.com/PeterTheOne/vc4sm-bundle/issues"
             },
-            "time": "2021-01-15T17:45:55+00:00"
+            "time": "2021-02-23T14:36:24+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -7500,5 +7501,6 @@
     "platform-dev": [],
     "platform-overrides": {
         "php": "7.3"
-    }
+    },
+    "plugin-api-version": "2.0.0"
 }
