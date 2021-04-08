@@ -1297,12 +1297,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PeterTheOne/vc4sm-bundle.git",
-                "reference": "4a4abf4f39a59899113bbda1448a1e707c4c7b99"
+                "reference": "4a88c012dce196ee48b1eee44632f514e909e465"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PeterTheOne/vc4sm-bundle/zipball/4a4abf4f39a59899113bbda1448a1e707c4c7b99",
-                "reference": "4a4abf4f39a59899113bbda1448a1e707c4c7b99",
+                "url": "https://api.github.com/repos/PeterTheOne/vc4sm-bundle/zipball/4a88c012dce196ee48b1eee44632f514e909e465",
+                "reference": "4a88c012dce196ee48b1eee44632f514e909e465",
                 "shasum": ""
             },
             "require": {
@@ -1364,7 +1364,7 @@
                 "source": "https://github.com/PeterTheOne/vc4sm-bundle/tree/master",
                 "issues": "https://github.com/PeterTheOne/vc4sm-bundle/issues"
             },
-            "time": "2021-03-18T13:26:23+00:00"
+            "time": "2021-04-08T10:43:08+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
