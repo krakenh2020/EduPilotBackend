@@ -1,13 +1,16 @@
-vc4sm-backend
-==============
+# KRAKEN Education Pilot - Uni API Backend
 
-a frontend for an API that provides education verifiable credentials to university students.
+[![Build, Deploy](https://github.com/krakenh2020/EduPilotBackend/actions/workflows/docker.yml/badge.svg)](https://github.com/krakenh2020/EduPilotBackend/actions/workflows/docker.yml)
 
-- Frontend: https://github.com/PeterTheOne/vc4sm-frontend
-- Bundle: https://github.com/PeterTheOne/vc4sm-bundle
+A API for a frontend that provides education verifiable credentials to university students.
 
-Part of the **Verifiable Credentials for Student Mobility** project funded by TU Graz
+- Deployment: https://github.com/krakenh2020/EduPilotDeploymentDocker
+- Frontend: https://github.com/krakenh2020/EduPilotFrontend
+- API Bundle: https://github.com/PeterTheOne/vc4sm-bundle
+
+Part of the [**H2020 Project KRAKEN**](https://krakenh2020.eu/) and the [**Verifiable Credentials for Student Mobility**](https://api.ltb.io/show/BLUOR) project funded by TU Graz 
 as a technologically enhanced administration (TEA) marketplace project.
+
 
 Based on https://gitlab.tugraz.at/dbp/middleware/dbp-api/api-server-template , a template/starting point for your own API instance.
 It consists of a minimally configures Symfony application and development environment
@@ -19,14 +22,13 @@ and includes/integrates:
 * A docker-compose based development environment
 * Linter/Unittest integration
 
-Template Documentation
--------------
+
+### Template Documentation
 
 The documentation is work in progress and currently exists in another repository which can be viewed here:
 https://api.tugraz.at/docs/index.html
 
-Creating your own API instance and creating your own Bundle
------------------------------------------------------------
+### Creating your own API instance and creating your own Bundle
 
 * Fork this repository
 * Run the docker-compose based development environment and test it
@@ -34,30 +36,16 @@ Creating your own API instance and creating your own Bundle
 * Add the new bundle to your API fork
 
 
-local development
------------------
+##  local development
 
 - `cd docker-dev`
 - (see README there)
 - `docker-compose up`
 
-license
--------
 
-AGPL-3.0-or-later License, Copyright (c) 2021 Peter Grassberger
+## License
 
-Peter Grassberger <p.grassberger@student.tugraz.at> is the Author.
+LGPL-2.1-or-later License, Copyright (c) 2020-2021 Peter Grassberger & KRAKEN consortium
 
-TU Graz has exclusive right of use and the right to grant usage rights and does so as `LGPL-2.1-or-later`,
-also see agreement in german below.
+Peter Grassberger <p.grassberger@student.tugraz.at> is [the original](https://github.com/PeterTheOne/vc4sm-frontend) Author.
 
-> Der/Die Auftragnehmer/in überträgt der TU Graz an den von ihm/ihr erzielten
-Arbeitsergebnissen sämtliche wie immer gearteten unbeschränkten,
-ausschließlichen und übertragbaren Werknutzungsrechte, welche das Recht
-beinhalteten, die Arbeitsergebnisse auf alle dem Urheber/der Urheberin
-vorbehaltenen Arten zu benutzen oder benutzen zu lassen. Die TU Graz ist zur
-uneingeschränkten Ausübung der Rechte an den Arbeitsergebnissen berechtigt und
-hat das Recht, Dritten diese ausschließliche Nutzungsbefugnis zu übertragen oder
-diesen ein einfaches Nutzungsrecht einzuräumen. Die Übertragung oben genannter
-Rechte ist mit der Bezahlung des vereinbarten Entgelts abgegolten. Ein darüber
-hinaus gehendes Entgelt gebührt ausdrücklich nicht.
