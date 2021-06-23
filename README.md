@@ -6,7 +6,7 @@ A API for a frontend that provides education verifiable credentials to universit
 
 - Deployment: https://github.com/krakenh2020/EduPilotDeploymentDocker
 - Frontend: https://github.com/krakenh2020/EduPilotFrontend
-- API Bundle: https://github.com/PeterTheOne/vc4sm-bundle
+- API Bundle: https://github.com/krakenh2020/EduPilotBackendBundle
 
 Part of the [**H2020 Project KRAKEN**](https://krakenh2020.eu/) and the [**Verifiable Credentials for Student Mobility**](https://api.ltb.io/show/BLUOR) project funded by TU Graz 
 as a technologically enhanced administration (TEA) marketplace project.
