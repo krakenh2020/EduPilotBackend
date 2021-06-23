@@ -1,0 +1,3 @@
+vc4edu:
+  aries_agent_university: '%env(ARIES_AGENT_UNIVERSITY)%'
+  aries_agent_university2: '%env(ARIES_AGENT_UNIVERSITY2)%'
