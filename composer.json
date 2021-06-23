@@ -4,7 +4,7 @@
     "require": {
         "php": "^7.3",
         "dbp/api-core-bundle": "@dev",
-        "pg/vc4sm-bundle": "dev-master",
+        "kraken/vc4sm-bundle": "dev-master",
         "symfony/apache-pack": "^1.0",
         "symfony/console": "^4.4",
         "symfony/dotenv": "^4.4",
@@ -20,7 +20,7 @@
         },
         {
             "type": "vcs",
-            "url": "git@github.com:PeterTheOne/vc4sm-bundle.git"
+            "url": "git@github.com:krakenh2020/EduPilotBackendBundle.git"
         }
     ],
     "config": {
