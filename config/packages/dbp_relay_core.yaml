@@ -1,0 +1,4 @@
+dbp_relay_core:
+#  keycloak_client_id: '%env(KEYCLOAK_FRONTEND_CLIENT_ID)%'
+  build_info: '%env(APP_BUILDINFO)%'
+  build_info_url: '%env(APP_BUILDINFO_URL)%'
