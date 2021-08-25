@@ -38,8 +38,8 @@ jobs:
           U="https://github.com/krakenh2020/EduPilotBackend/tree/${{ github.sha }}"
           echo $I
           echo $U 
-          echo "APP_BUILDINFO=$I" >> .env
-          echo "APP_BUILDINFO_URL=$U" >> .env
+          echo "APP_BUILDINFO=\"$I\"" >> .env
+          echo "APP_BUILDINFO_URL=\"$U\"" >> .env
       -
         name: Install PHP Dependencies
         run: cd docker-dev && bash build.sh
