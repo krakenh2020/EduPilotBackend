@@ -32,6 +32,15 @@ jobs:
         name: Generate demo keys
         run: cd docker-dev && ./generate_demo_keys.sh
       -
+        name: Write build info
+        run: |
+          I="${{ github.sha }} ($(date -Iminutes ))"
+          U="https://github.com/krakenh2020/EduPilotBackend/tree/${{ github.sha }}"
+          echo $I
+          echo $U 
+          echo "APP_BUILDINFO=$I" >> .env
+          echo "APP_BUILDINFO_URL=$U" >> .env
+      -
         name: Install PHP Dependencies
         run: cd docker-dev && bash build.sh
       - 
