@@ -21,29 +21,39 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
         ports:
           - 8092:8092
+          - 8091:8091
         env:
           ARIESD_API_HOST: 0.0.0.0:8092
           ARIESD_INBOUND_HOST: http@0.0.0.0:8091
-          ARIESD_INBOUND_HOST_EXTERNAL: http@http://agent.student-agent.demo:8091
+          ARIESD_INBOUND_HOST_EXTERNAL: http@http://student-agent:8091
           ARIESD_WEBHOOK_URL: https://enybebk8mydni.x.pipedream.net
           ARIESD_DEFAULT_LABEL: student-agent
           ARIESD_DATABASE_TYPE: leveldb
           ARIESD_DATABASE_PREFIX: student
           ARIESD_DATABASE_TIMEOUT: 60
-          ARIESD_HTTP_RESOLVER: http://sidetree-mock.demo:48326/sidetree/0.0.1/identifiers
+          ARIESD_HTTP_RESOLVER: sidetree@http://sidetree-mock.demo:48326/sidetree/0.0.1/identifiers
 
     steps:
       -
+        name: Start
+        continue-on-error: true
+        run: |
+          docker ps
+
+      -
         name: Test via localhost
+        continue-on-error: true
         run: |
           curl http://localhost:8092/connections
 
       -
         name: Test via 127.0.0.1
+        continue-on-error: true
         run: |
           curl http://127.0.0.1:8092/connections
 
       -
         name: Test via hostname
+        continue-on-error: true
         run: |
           curl http://student-agent:8092/connections
