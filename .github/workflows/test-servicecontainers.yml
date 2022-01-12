@@ -1,4 +1,4 @@
-name: Test GitHub service containers
+name: Test GitHub actions containers
 # https://docs.github.com/en/actions/using-containerized-services/about-service-containers
 
 on:
@@ -10,31 +10,24 @@ on:
      - main
 
 jobs:
-  servicecontainers:
+containerexperiments:
     runs-on: ubuntu-latest
 
-    services:
-      student-agent:
-        image: ghcr.io/hyperledger/aries-framework-go:0.1.6
-        credentials:
+    steps:
+      - 
+        name: Docker Login
+        uses: docker/login-action@v1
+        with:
+          registry: docker.pkg.github.com
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-        ports:
-          - 8092:8092
-          - 8091:8091
-        options: --entrypoint "/usr/local/bin/aries-agent-rest start"
-        env:
-          ARIESD_API_HOST: 0.0.0.0:8092
-          ARIESD_INBOUND_HOST: http@0.0.0.0:8091
-          ARIESD_INBOUND_HOST_EXTERNAL: http@http://student-agent:8091
-          ARIESD_WEBHOOK_URL: https://enybebk8mydni.x.pipedream.net
-          ARIESD_DEFAULT_LABEL: student-agent
-          ARIESD_DATABASE_TYPE: leveldb
-          ARIESD_DATABASE_PREFIX: student
-          ARIESD_DATABASE_TIMEOUT: 60
-          ARIESD_HTTP_RESOLVER: sidetree@http://sidetree-mock.demo:48326/sidetree/0.0.1/identifiers
+      -
+        name: Create helper containers
+        run: |
+          docker pull ghcr.io/hyperledger/aries-framework-go:0.1.6
+          docker network create --label kraken-network github_network_kraken
+          docker create --name student-agent-container --label student-agent --network github_network_kraken --network-alias student-agent -p 8092:8092 -p 8091:8091  -e "ARIESD_API_HOST=0.0.0.0:8092" -e "ARIESD_INBOUND_HOST=http@0.0.0.0:8091" -e "ARIESD_INBOUND_HOST_EXTERNAL=http@http://student-agent:8091" -e "ARIESD_WEBHOOK_URL=https://enybebk8mydni.x.pipedream.net" -e "ARIESD_DEFAULT_LABEL=student-agent" -e "ARIESD_DATABASE_TYPE=leveldb" -e "ARIESD_DATABASE_PREFIX=student" -e "ARIESD_DATABASE_TIMEOUT=60" -e "ARIESD_HTTP_RESOLVER=sidetree@http://sidetree-mock.demo:48326/sidetree/0.0.1/identifiers" -e GITHUB_ACTIONS=true -e CI=true ghcr.io/hyperledger/aries-framework-go:0.1.6 start
 
-    steps:
       -
         name: Show service logs
         continue-on-error: true
