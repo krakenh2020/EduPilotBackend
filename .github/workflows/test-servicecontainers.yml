@@ -10,7 +10,7 @@ on:
      - main
 
 jobs:
-  phpunit:
+  servicecontainers:
     runs-on: ubuntu-latest
 
     services:
@@ -36,14 +36,14 @@ jobs:
       -
         name: Test via localhost
         run: |
-          http://localhost:8092/connections
+          curl http://localhost:8092/connections
 
       -
         name: Test via 127.0.0.1
         run: |
-          http://127.0.0.1:8092/connections
+          curl http://127.0.0.1:8092/connections
 
       -
         name: Test via hostname
         run: |
-          http://student-agent:8092/connections
+          curl http://student-agent:8092/connections
