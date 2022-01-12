@@ -27,6 +27,7 @@ jobs:
           docker pull ghcr.io/hyperledger/aries-framework-go:0.1.6
           docker network create --label kraken-network github_network_kraken
           docker create --name student-agent-container --label student-agent --network github_network_kraken --network-alias student-agent -p 8092:8092 -p 8091:8091  -e "ARIESD_API_HOST=0.0.0.0:8092" -e "ARIESD_INBOUND_HOST=http@0.0.0.0:8091" -e "ARIESD_INBOUND_HOST_EXTERNAL=http@http://student-agent:8091" -e "ARIESD_WEBHOOK_URL=https://enybebk8mydni.x.pipedream.net" -e "ARIESD_DEFAULT_LABEL=student-agent" -e "ARIESD_DATABASE_TYPE=leveldb" -e "ARIESD_DATABASE_PREFIX=student" -e "ARIESD_DATABASE_TIMEOUT=60" -e "ARIESD_HTTP_RESOLVER=sidetree@http://sidetree-mock.demo:48326/sidetree/0.0.1/identifiers" -e GITHUB_ACTIONS=true -e CI=true ghcr.io/hyperledger/aries-framework-go:0.1.6 start
+          docker start student-agent-container
 
       -
         name: Show service logs
