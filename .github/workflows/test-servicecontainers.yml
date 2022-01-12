@@ -33,7 +33,7 @@ containerexperiments:
         continue-on-error: true
         run: |
           docker ps
-          docker logs "${{ job.services.student-agent.id }}"
+          docker logs "student-agent-container"
 
       -
         name: Test via localhost
