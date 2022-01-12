@@ -35,10 +35,11 @@ jobs:
 
     steps:
       -
-        name: Start
+        name: Show service logs
         continue-on-error: true
         run: |
           docker ps
+          docker logs "${{ job.services.student-agent.id }}"
 
       -
         name: Test via localhost
