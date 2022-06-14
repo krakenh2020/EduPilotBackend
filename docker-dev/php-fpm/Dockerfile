@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:bullseye
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -21,7 +21,6 @@ RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
         php8.1-cli \
         php8.1-curl \
         php8.1-soap \
-        php8.1-json \
         php8.1-mbstring \
         php8.1-opcache \
         php8.1-readline \
