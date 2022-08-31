@@ -37,11 +37,13 @@ RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 STOPSIGNAL SIGQUIT
 
 ARG UID
-RUN useradd -u "$UID" -ms /bin/bash user
+RUN useradd -ms /bin/bash user
 RUN echo 'user ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER user
 
 RUN git config --global url."https://gitlab.tugraz.at/".insteadOf "git@gitlab.tugraz.at:"
+
+COPY . /application
 
 CMD ["/usr/sbin/php-fpm8.1", "-O" ]
 EXPOSE 9000
